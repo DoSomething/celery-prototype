@@ -1,11 +1,11 @@
 from flask import Flask
 
-app = Flask(__name__)
+web = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@web.route('/', methods=['GET', 'POST'])
 def blink():
     return "Object Created", 201
 
 if __name__ == ("__main__"):
-    app.debug = False
-    app.run()
+    web.debug = False
+    web.run()
