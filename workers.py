@@ -8,7 +8,8 @@ from celery import Celery
 
 # conn = None
 
-app = Celery('workers')
+app = Celery()
+app.config_from_object('celeryconfig')
 
 @app.task
 def print_params(params):
