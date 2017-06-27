@@ -13,4 +13,4 @@ app.config_from_object('celeryconfig')
 
 @app.task
 def print_params(params):
-    print(params)
+    return params
