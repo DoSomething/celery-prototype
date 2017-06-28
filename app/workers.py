@@ -13,7 +13,8 @@ app = Celery()
 app.config_from_object('celeryconfig')
 
 @app.task(bind=True, default_retry_delay=1)
-def print_params(self, params):
-    self.retry(max_retries=5)
-    # self.update_state(state=states.SUCCESS, meta=params)
-    # return True
+def print_params(self, param):
+    if (param > 5):
+        self.retry(max_retries=5)
+    else:
+        return true

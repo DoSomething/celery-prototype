@@ -5,6 +5,7 @@ verify_ssl = true
 [packages]
 Flask = "*"
 celery = "*"
+gunicorn = "*"
 
 [dev-packages]
 pytest = "*"
