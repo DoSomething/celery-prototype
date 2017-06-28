@@ -1,6 +1,6 @@
 import os
 
-result_backend = os.environ['RESULT_BACKEND']
+result_backend = os.getenv('RESULT_BACKEND', None)
 broker_url = os.environ['BROKER_URI']
 
 broker_pool_limit = 1 # Will decrease connection usage
