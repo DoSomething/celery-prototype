@@ -31,11 +31,11 @@ build:
 
     - script:
         name: install dependencies
-        code: pipenv install && pipenv shell
+        code: pipenv install
 
     - script:
         name: run tests
-        code: pytest
+        code: pipenv run pytest
 
     # A step that sets up the python virtual environment
     # - virtualenv:
