@@ -1,17 +1,19 @@
-from pytest import raises
+import os
+import sys
 
 from celery.exceptions import Retry
-
+from pytest import raises
 from unittest.mock import patch
 
-from ..workers import print_params
-
-class test_print_params:
-
-    def test_success(self):
-        assert print_params(1) == True
+# Local imports
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from app.workers import print_params
 
 
-    def test_retry(self):
-        with raises(Retry):
-            print_params(10)
+def test_success():
+    assert print_params(1) == True
+
+
+def test_retry():
+    with raises(Retry):
+        print_params(10)

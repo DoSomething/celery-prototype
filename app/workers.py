@@ -17,4 +17,4 @@ def print_params(self, param):
     if (param > 5):
         self.retry(max_retries=5)
     else:
-        return true
+        return True
