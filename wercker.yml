@@ -35,7 +35,7 @@ build:
 
     - script:
         name: run tests
-        code: pipenv run pytest
+        code: pipenv run pytest --cov=app
 
     # A step that sets up the python virtual environment
     # - virtualenv:
