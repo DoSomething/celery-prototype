@@ -14,6 +14,6 @@ def test_success():
     assert print_params(1) == True
 
 
-# def test_retry():
-#     with raises(Retry):
-#         print_params(10)
+def test_retry():
+    with raises(Retry):
+        print_params(10)
