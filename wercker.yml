@@ -35,7 +35,7 @@ build:
 
     - script:
         name: run tests
-        code: pipenv run pytest --cov=app
+        code: pipenv run pytest --cov=app --cov-report xml
 
     - script:
         name: publish coverage report to codecov
