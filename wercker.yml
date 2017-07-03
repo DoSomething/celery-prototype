@@ -37,6 +37,10 @@ build:
         name: run tests
         code: pipenv run pytest --cov=app
 
+    - script:
+        name: publish coverage report to codecov
+        code: pipenv run codecov
+
     # A step that sets up the python virtual environment
     # - virtualenv:
     #     name: setup virtual environment

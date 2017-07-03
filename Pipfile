@@ -10,3 +10,4 @@ gunicorn = "*"
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
+codecov = "*"
