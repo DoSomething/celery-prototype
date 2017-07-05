@@ -34,6 +34,10 @@ build:
         code: pipenv install --three --dev
 
     - script:
+        name: run lint
+        code: pipenv run pylint app tests
+
+    - script:
         name: run tests
         code: pipenv run pytest --cov=app --cov-report xml
 
