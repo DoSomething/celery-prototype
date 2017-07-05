@@ -1,5 +1,5 @@
 from flask import Flask
-from workers import print_params
+from .workers import print_params
 
 SERVER = Flask(__name__)
 
