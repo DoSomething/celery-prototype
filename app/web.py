@@ -6,7 +6,7 @@ server = Flask(__name__)
 
 @server.route('/', methods=['GET', 'POST'])
 def blink():
-    print_params.apply_async(args=[request.remote_addr])
+    print_params.apply_async(args=[1])
     return "Object Created", 201
 
 if __name__ == ("__main__"):
