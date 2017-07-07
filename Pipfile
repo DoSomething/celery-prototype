@@ -6,10 +6,13 @@ verify_ssl = true
 Flask = "*"
 celery = "*"
 gunicorn = "*"
+requests = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
 codecov = "*"
 pylint = "*"
-requests = "*"
+
+[dev-packages.watchdog]
+git = "https://github.com/gorakhargosh/watchdog.git"

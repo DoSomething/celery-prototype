@@ -14,8 +14,10 @@ def get_params():
 @SERVER.route('/requests', methods=['GET'])
 def get_requests():
     data = {
-        'event_id': '1',
-        'event_type': '2'
+        'keyword': "BOOKBOT",
+        'phone': '13478227222',
+        'message_id': '841415468',
+        'profile_id': '167181555'
     }
     gambit_mdata_relay.apply_async(args=[data])
     return 'Object Created', 201
