@@ -12,9 +12,11 @@ def response_content(url, request):
     return {'status_code': 200,
             'content': '{"data": "1"}'}
 
+
 @all_requests
 def server_error(url, request):
     return {'status_code': 500}
+
 
 def get_gambit_payload():
     return {
