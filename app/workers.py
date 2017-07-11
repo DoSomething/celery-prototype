@@ -17,8 +17,8 @@ def print_params(self, param):
         return True
 
 
-@CELERY.task()
-def gambit_mdata_relay(data):
+@CELERY.task(bind=True)
+def gambit_mdata_relay(self, data):
     response = requests.post(
         f'{gambit_config["base_url"]}/chatbot',
         data=json.dumps(data),
@@ -29,8 +29,13 @@ def gambit_mdata_relay(data):
         print(response.json())
         return True
 
+    if response.status_code == 500:
+        self.retry(max_retries=5)
+        return True
+
     print(response)
     print(response.text)
+    return False
 
 def get_gambit_headers():
     return {
