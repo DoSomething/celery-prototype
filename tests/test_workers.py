@@ -5,8 +5,10 @@ import requests
 
 from app.workers import print_params, gambit_mdata_relay
 
+
 @all_requests
 def response_content(url, request):
+    print(url)
     return {'status_code': 200,
             'content': '{"data": "1"}'}
 
