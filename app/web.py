@@ -7,6 +7,7 @@ SERVER = Flask(__name__)
 
 @SERVER.route('/', methods=['GET'])
 def get_params():
+    print('Log log loggly mclogface')
     print_params.apply_async(args=[1])
     return 'Object Created', 201
 
