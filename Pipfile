@@ -8,6 +8,7 @@ celery = "*"
 gunicorn = "*"
 requests = "*"
 httmock = "*"
+python-dotenv = "*"
 
 [dev-packages]
 pytest = "*"
