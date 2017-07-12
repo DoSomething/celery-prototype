@@ -1,12 +1,4 @@
-import json
-
 from celery import Celery
-import requests
-
-from config.gambit import gambit_config
-
-CELERY = Celery()
-CELERY.config_from_object('celeryconfig')
 
 
 @CELERY.task(bind=True, default_retry_delay=1)

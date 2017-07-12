@@ -8,7 +8,6 @@ from app.workers import print_params, gambit_mdata_relay
 
 @all_requests
 def response_content(url, request):
-    print(url)
     return {'status_code': 200,
             'content': '{"data": "1"}'}
 
@@ -47,4 +46,3 @@ def test_gambit_relay_retry():
     with HTTMock(server_error):
         with raises(Retry):
             gambit_mdata_relay(get_gambit_payload())
-
