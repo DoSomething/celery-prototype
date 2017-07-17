@@ -1,12 +1,7 @@
 import os
-
 from celery import Celery
 
-from blink.utils.config import load_env
-
-
 app = Celery('blink')
-load_env()
 
 app.config_from_object({
     'result_backend': os.getenv('RESULT_BACKEND', None),
