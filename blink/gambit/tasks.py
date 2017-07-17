@@ -2,6 +2,7 @@ from blink.celery import app
 
 @app.task(bind=True, default_retry_delay=1)
 def print_params(self, param):
+    print(param)
     if param > 5:
         self.retry(max_retries=5)
     else:

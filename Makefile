@@ -7,11 +7,11 @@ test:
 run-web:
 	gunicorn app.web:SERVER --log-file -
 
-run-worker:
-	celery worker --app=app.workers.CELERY -n worker1@local --without-mingle --without-heartbeat
+run-celery:
+	python run-celery.py worker -n worker1@local --without-mingle --without-heartbeat
 
-watch-worker:
-	watchmedo auto-restart -- celery worker --app=app.workers.CELERY -n worker1@local --without-mingle --without-heartbeat
+watch-celery:
+	watchmedo auto-restart -- make run-celery
 
 watch-web:
-	watchmedo auto-restart -- gunicorn app.web:SERVER --log-file -
+	watchmedo auto-restart -- python run-web.py

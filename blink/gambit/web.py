@@ -12,5 +12,5 @@ def index():
 @web.route('/mdata')
 def mdata():
     # print(print_params)
-    # print_params.apply_async(args=[1])
+    print_params.apply_async(args=[1])
     return 'Done', 201
