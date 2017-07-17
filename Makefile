@@ -1,8 +1,11 @@
 lint:
-	pylint app tests
+	pylint blink tests
 
 test:
 	pytest
+
+test-with-cov:
+	pytest --cov=blink --cov-report html
 
 run-web:
 	gunicorn app.web:SERVER --log-file -
