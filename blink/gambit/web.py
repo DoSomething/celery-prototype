@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-from .tasks import print_params
+from .tasks import gambit_mdata_relay
 
 web = Blueprint('gambit', __name__)
 
@@ -11,6 +11,11 @@ def index():
 
 @web.route('/mdata')
 def mdata():
-    # print(print_params)
-    print_params.apply_async(args=[1])
+    data = {
+        'keyword': "BOOKBOT",
+        'phone': '13478227222',
+        'message_id': '841415468',
+        'profile_id': '167181555'
+    }
+    gambit_mdata_relay.apply_async(args=(data,))
     return 'Done', 201
