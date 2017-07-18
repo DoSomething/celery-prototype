@@ -4,6 +4,7 @@ from pytest import raises
 import requests
 
 from blink.gambit.tasks import print_params, gambit_mdata_relay
+from blink.gambit.models import Mdata
 
 
 @all_requests
@@ -37,5 +38,5 @@ def test_gambit_relay_retry():
             gambit_mdata_relay(get_gambit_payload())
 
 
-def test_gambit_input_mdata():
-    new Mdata(get_gambit_payload())
+def test_gambit_model_mdata():
+    mdata = Mdata(get_gambit_payload())
