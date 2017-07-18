@@ -9,6 +9,7 @@ gunicorn = "*"
 requests = "*"
 httmock = "*"
 python-dotenv = "*"
+Cerberus = "*"
 
 [dev-packages]
 pytest = "*"
