@@ -11,7 +11,7 @@ run-web:
 	gunicorn blink.web:app --log-file -
 
 run-celery:
-	python run-celery.py worker -n worker1@local --without-mingle --without-heartbeat
+	python run-celery.py worker -n worker1@local
 
 watch-celery:
 	watchmedo auto-restart --patterns="*.py" --recursive -- make run-celery
