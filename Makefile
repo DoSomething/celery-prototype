@@ -14,7 +14,7 @@ run-celery:
 	python run-celery.py worker -n worker1@local --without-mingle --without-heartbeat
 
 watch-celery:
-	watchmedo auto-restart -- make run-celery
+	watchmedo auto-restart --patterns="*.py" --recursive -- make run-celery
 
 watch-web:
-	watchmedo auto-restart -- python run-web.py
+	watchmedo auto-restart --patterns="*.py" --recursive -- python run-web.py
