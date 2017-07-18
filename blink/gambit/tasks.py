@@ -1,5 +1,6 @@
 import json
 import requests
+
 from blink.celery import app
 from . import config
 

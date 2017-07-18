@@ -35,3 +35,7 @@ def test_gambit_relay_retry():
     with HTTMock(server_error):
         with raises(Retry):
             gambit_mdata_relay(get_gambit_payload())
+
+
+def test_gambit_input_mdata():
+    new Mdata(get_gambit_payload())
