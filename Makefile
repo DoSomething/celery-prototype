@@ -8,7 +8,7 @@ test-with-cov:
 	pytest --cov=blink --cov-report html
 
 run-web:
-	gunicorn blink.web.app --log-file -
+	python run-web.py
 
 run-celery:
 	python run-celery.py worker -n worker1@local --without-mingle --without-heartbeat
